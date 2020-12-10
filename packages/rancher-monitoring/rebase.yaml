@@ -1,0 +1,3 @@
+workingDir: charts
+url:  https://github.com/prometheus-community/helm-charts/releases/download/kube-prometheus-stack-12.7.0/kube-prometheus-stack-12.7.0.tgz
+    

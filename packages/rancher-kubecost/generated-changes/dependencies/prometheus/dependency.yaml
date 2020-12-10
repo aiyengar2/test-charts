@@ -1,0 +1,4 @@
+workingDir: ""
+url: https://github.com/kubecost/cost-analyzer-helm-chart.git
+subdirectory: cost-analyzer/charts/prometheus
+commit: 0abacd30f00a3e1f02af91d9f9a7dac180362a27

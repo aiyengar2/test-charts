@@ -1,0 +1,6 @@
+packageVersion: 00
+releaseCandidateVersion: 00
+workingDirectory: cost-analyzer
+url:  https://github.com/kubecost/cost-analyzer-helm-chart.git
+subdirectory: cost-analyzer
+commit: 0abacd30f00a3e1f02af91d9f9a7dac180362a27

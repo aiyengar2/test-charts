@@ -1,0 +1,3 @@
+workingDir: ""
+url: packages/rancher-kubecost
+subdirectory: charts/thanos

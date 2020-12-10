@@ -1,0 +1,9 @@
+--- charts-original/Chart.yaml
++++ charts/Chart.yaml
+@@ -2,5 +2,5 @@
+ appVersion: "1.70.0"
+ description: A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor
+   cloud costs.
+-name: cost-analyzer
++name: rancher-cost-analyzer
+ version: 1.70.0
