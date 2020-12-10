@@ -1,0 +1,40 @@
+# Repository: a repository that contains your forked Helm charts
+repository:
+  # Owner: the organization or person who owns the chart. Must be a Github user or organization you have permissions to push to
+  owner: aiyengar2
+  # Name: the name of the repository that contains your forked Helm charts, owned by the user provided above
+  name: test-charts
+
+# Helm Repo: the repository that will host your Helm charts, used in the Staging and Live branches
+helmRepo:
+  # The URL to use as the CNAME for the branch
+  url: charts.rancher.io
+
+# Source Branch: a branch that developers push changes to
+source:
+  branch: dev-v2.5-source
+
+# Staging Branch: a branch that contains compiled assets and charts merged into the Source branch. Used for testing
+staging:
+  branch: dev-v2.5
+  options:
+    export:
+      # Prevents users to generate charts and assets that have already been generated before
+      preventOverwrite: true
+    clean:
+    # Prevents users from cleaning up charts or assets that have been generated on a clean
+      preventCleanAssets: true
+
+# Live Branch: a branch that contains compiled assets and charts ported from the Staging branch. Should never be automated
+live:
+  branch: main
+  options:
+    export:
+      # Prevents users to generate charts and assets that have already been generated before
+      preventOverwrite: true
+    clean:
+      # Prevents users from cleaning up charts or assets that have been generated on a clean
+      preventCleanAssets: true
+    sync:
+      # On a sync, only take the latest RCs of each package from staging and drop the RC version
+      dropReleaseCandidates: true
