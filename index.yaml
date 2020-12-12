@@ -1,0 +1,176 @@
+apiVersion: v1
+entries:
+  cost-analyzer:
+  - apiVersion: v1
+    appVersion: 1.70.0
+    created: "2020-12-12T02:28:47.008353-08:00"
+    dependencies:
+    - condition: global.grafana.enabled
+      name: grafana
+      repository: file://./charts/grafana
+    - condition: global.prometheus.enabled
+      name: prometheus
+      repository: file://./charts/prometheus
+    - condition: global.thanos.enabled
+      name: thanos
+      repository: file://./charts/thanos
+    description: A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs.
+    digest: 76bbbfc89690f1023e0ddabe2c7e83ea5360193d28be6e338d5af94340167105
+    name: cost-analyzer
+    urls:
+    - assets/mini-kubecost/cost-analyzer-1.70.000.tgz
+    version: 1.70.000
+  kube-prometheus-stack:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v1
+    appVersion: 0.38.1
+    created: "2020-12-12T02:28:47.07028-08:00"
+    dependencies:
+    - condition: grafana.enabled
+      name: grafana
+      repository: file://./charts/grafana
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: file://./charts/kube-state-metrics
+    - condition: local-dep.enabled
+      name: local-dep
+      repository: file://./charts/local-dep
+    - condition: nodeExporter.enabled
+      name: prometheus-node-exporter
+      repository: file://./charts/prometheus-node-exporter
+    - condition: rancher-kubecost.enabled
+      name: rancher-kubecost
+      repository: file://./charts/rancher-kubecost
+    - condition: rancher-local.enabled
+      name: rancher-local
+      repository: file://./charts/rancher-local
+    - condition: thanos.enabled
+      name: thanos
+      repository: file://./charts/thanos
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
+    digest: 89be8e93027b3ab727fd2b5335c8e11e32016e7c17e67dcb5992563c4fe24a48
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: kube-prometheus-stack
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - assets/rancher-monitoring/kube-prometheus-stack-9.4.200.tgz
+    version: 9.4.200
+  rancher-cost-analyzer:
+  - apiVersion: v1
+    appVersion: 1.70.0
+    created: "2020-12-12T02:28:47.017355-08:00"
+    dependencies:
+    - condition: global.grafana.enabled
+      name: grafana
+      repository: file://./charts/grafana
+    - condition: global.prometheus.enabled
+      name: prometheus
+      repository: file://./charts/prometheus
+    - condition: global.thanos.enabled
+      name: thanos
+      repository: file://./charts/thanos
+    description: A Helm chart that sets up Kubecost, Prometheus, and Grafana to monitor cloud costs.
+    digest: ada51fcc8434dc3b358adceba6ff262dc16d149287a91ffbd574ca0378aa857f
+    name: rancher-cost-analyzer
+    urls:
+    - assets/rancher-kubecost/rancher-cost-analyzer-1.70.000.tgz
+    version: 1.70.000
+  rancher-local:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v1
+    appVersion: 0.38.1
+    created: "2020-12-12T02:28:47.025489-08:00"
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
+    digest: 631aee5ca9e4150635d4203e56c70ba9367673634847b25a43096a1c1d0aa326
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: rancher-local
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - assets/rancher-local/rancher-local-9.4.200.tgz
+    version: 9.4.200
+  rancher-monitoring-crd:
+  - annotations:
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/prometheus-community/helm-charts
+        - name: Upstream Project
+          url: https://github.com/prometheus-operator/kube-prometheus
+      artifacthub.io/operator: "true"
+    apiVersion: v1
+    appVersion: 0.38.1
+    created: "2020-12-12T02:28:47.073944-08:00"
+    description: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.
+    digest: af01de440504512b011dc6df7d171c78c8ea9982acf3d6720a8c9e96e2b5edb8
+    home: https://github.com/prometheus-operator/kube-prometheus
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    keywords:
+    - operator
+    - prometheus
+    - kube-prometheus
+    maintainers:
+    - name: vsliouniaev
+    - name: bismarck
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: github.gkarthiks@gmail.com
+      name: gkarthiks
+    - email: scott@r6by.com
+      name: scottrigby
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    name: rancher-monitoring-crd
+    sources:
+    - https://github.com/prometheus-community/helm-charts
+    - https://github.com/prometheus-operator/kube-prometheus
+    urls:
+    - assets/rancher-monitoring/rancher-monitoring-crd-9.4.200.tgz
+    version: 9.4.200
+generated: "2020-12-12T02:28:46.99852-08:00"

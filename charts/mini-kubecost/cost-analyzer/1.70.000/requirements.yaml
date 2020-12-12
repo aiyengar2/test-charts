@@ -1,0 +1,25 @@
+dependencies:
+- name: grafana
+  version: ""
+  repository: file://./charts/grafana
+  condition: global.grafana.enabled
+  tags: []
+  enabled: false
+  importvalues: []
+  alias: ""
+- name: prometheus
+  version: ""
+  repository: file://./charts/prometheus
+  condition: global.prometheus.enabled
+  tags: []
+  enabled: false
+  importvalues: []
+  alias: ""
+- name: thanos
+  version: ""
+  repository: file://./charts/thanos
+  condition: global.thanos.enabled
+  tags: []
+  enabled: false
+  importvalues: []
+  alias: ""
