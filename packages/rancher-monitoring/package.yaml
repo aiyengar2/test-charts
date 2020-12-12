@@ -1,5 +1,5 @@
 packageVersion: 00
-releaseCandidateVersion: 00
+releaseCandidateVersion: 01
 workingDir: charts
 url:  https://github.com/prometheus-community/helm-charts/releases/download/kube-prometheus-stack-9.4.2/kube-prometheus-stack-9.4.2.tgz
 additionalCharts:
