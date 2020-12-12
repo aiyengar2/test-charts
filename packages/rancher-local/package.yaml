@@ -1,4 +1,4 @@
-packageVersion: 00
-releaseCandidateVersion: 01
+packageVersion: 01
+releaseCandidateVersion: 00
 workingDir: charts
 url: local
